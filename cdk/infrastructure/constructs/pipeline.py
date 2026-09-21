@@ -4,11 +4,15 @@ from aws_cdk import RemovalPolicy
 
 from aws_cdk.aws_codepipeline import Pipeline
 
+from aws_cdk.aws_codebuild import BuildEnvironment
+from aws_cdk.aws_codebuild import LinuxBuildImage
+
 from aws_cdk.aws_s3 import Bucket
 from aws_cdk.aws_s3 import BlockPublicAccess
 
 from aws_cdk.pipelines import CodePipeline
 from aws_cdk.pipelines import CodePipelineSource
+from aws_cdk.pipelines import CodeBuildOptions
 from aws_cdk.pipelines import DockerCredential
 from aws_cdk.pipelines import ManualApprovalStep
 from aws_cdk.pipelines import ShellStep
@@ -121,6 +125,11 @@ class BasicSelfUpdatingPipeline(Construct):
             self,
             'CodePipeline',
             synth=self.synth,
+            code_build_defaults=CodeBuildOptions(
+                build_environment=BuildEnvironment(
+                    build_image=LinuxBuildImage.STANDARD_7_0,
+                ),
+            ),
             docker_credentials=[
                 self._get_docker_credentials(),
             ],
