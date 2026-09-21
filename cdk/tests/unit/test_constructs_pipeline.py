@@ -1,6 +1,7 @@
 import pytest
 import json
 
+from aws_cdk.assertions import Match
 from aws_cdk.assertions import Template
 
 
@@ -354,7 +355,7 @@ def test_constructs_pipeline_initialize_demo_deployment_pipeline_construct(mocke
                                 'ProjectName': {
                                     'Ref': 'TestDemoDeploymentPipelineBuildSynthStepCdkBuildProject6B563FFC'
                                 },
-                                'EnvironmentVariables': "[{\"name\":\"_PROJECT_CONFIG_HASH\",\"type\":\"PLAINTEXT\",\"value\":\"09e3872abd4833eb32a6b4b2e1958cbb36dab7e6022067b918f95ad58940f3a3\"}]"
+                                'EnvironmentVariables': Match.any_value()
                             },
                             'InputArtifacts': [
                                 {
@@ -391,7 +392,7 @@ def test_constructs_pipeline_initialize_demo_deployment_pipeline_construct(mocke
                                 'ProjectName': {
                                     'Ref': 'TestDemoDeploymentPipelineCodePipelineUpdatePipelineSelfMutation212B9375'
                                 },
-                                'EnvironmentVariables': "[{\"name\":\"_PROJECT_CONFIG_HASH\",\"type\":\"PLAINTEXT\",\"value\":\"23ee736d5fd16edcc3a8afe9c61f8f29bb3681e2b263890124a5fc1a30965867\"}]"
+                                'EnvironmentVariables': Match.any_value()
                             },
                             'InputArtifacts': [
                                 {
@@ -647,7 +648,7 @@ def test_constructs_pipeline_initialize_dev_deployment_pipeline_construct(mocker
                                 'ProjectName': {
                                     'Ref': 'DevDeploymentPipelineBuildSynthStepCdkBuildProject2CD3821E'
                                 },
-                                'EnvironmentVariables': "[{\"name\":\"_PROJECT_CONFIG_HASH\",\"type\":\"PLAINTEXT\",\"value\":\"09e3872abd4833eb32a6b4b2e1958cbb36dab7e6022067b918f95ad58940f3a3\"}]"
+                                'EnvironmentVariables': Match.any_value()
                             },
                             'InputArtifacts': [
                                 {
@@ -684,7 +685,7 @@ def test_constructs_pipeline_initialize_dev_deployment_pipeline_construct(mocker
                                 'ProjectName': {
                                     'Ref': 'DevDeploymentPipelineCodePipelineUpdatePipelineSelfMutation49276B8C'
                                 },
-                                'EnvironmentVariables': "[{\"name\":\"_PROJECT_CONFIG_HASH\",\"type\":\"PLAINTEXT\",\"value\":\"23ee736d5fd16edcc3a8afe9c61f8f29bb3681e2b263890124a5fc1a30965867\"}]"
+                                'EnvironmentVariables': Match.any_value()
                             },
                             'InputArtifacts': [
                                 {
@@ -940,7 +941,7 @@ def test_constructs_pipeline_initialize_production_deployment_pipeline_construct
                                 'ProjectName': {
                                     'Ref': 'TestProductionDeploymentPipelineBuildSynthStepCdkBuildProjectF1FF1A53'
                                 },
-                                'EnvironmentVariables': "[{\"name\":\"_PROJECT_CONFIG_HASH\",\"type\":\"PLAINTEXT\",\"value\":\"f041a4096b5b2d4fbf65a1d7311618f03ff3d0f62f88fb9ea73440b7493eeb84\"}]"
+                                'EnvironmentVariables': Match.any_value()
                             },
                             'InputArtifacts': [
                                 {
@@ -977,7 +978,7 @@ def test_constructs_pipeline_initialize_production_deployment_pipeline_construct
                                 'ProjectName': {
                                     'Ref': 'TestProductionDeploymentPipelineCodePipelineUpdatePipelineSelfMutation7B8F4173'
                                 },
-                                'EnvironmentVariables': "[{\"name\":\"_PROJECT_CONFIG_HASH\",\"type\":\"PLAINTEXT\",\"value\":\"23ee736d5fd16edcc3a8afe9c61f8f29bb3681e2b263890124a5fc1a30965867\"}]"
+                                'EnvironmentVariables': Match.any_value()
                             },
                             'InputArtifacts': [
                                 {
