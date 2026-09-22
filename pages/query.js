@@ -29,7 +29,7 @@ const MAF_SOURCE = "bravo_af";
 
 export default function Query() {
   const [isOpen, setIsOpen] = useState(false);
-  const [ancestry, setAncestry] = useState("AFR");
+  const [ancestry, setAncestry] = useState("");
   const [r2, setR2] = useState("0.8");
   const [textInput, setTextInput] = useState("");
   const [isGrch38, setIsGrch38] = useState(true);
@@ -101,7 +101,7 @@ export default function Query() {
             </div>
           </div>
 
-          <div className="flex items-center mb-6">
+          <div className="flex items-center mb-6" style={{ display: "none" }}>
             <div className="w-1/3">
               <DataItemLabel htmlFor="ancestry">LD Ancestry</DataItemLabel>
             </div>
@@ -110,6 +110,7 @@ export default function Query() {
                 className={inputClassName}
                 name="ancestry"
                 value={ancestry}
+                disabled
                 onChange={(e) => setAncestry(e.target.value)}
               >
                 <option value="AFR">AFR</option>
@@ -130,7 +131,7 @@ export default function Query() {
             </div>
           </div>
 
-          <div className="flex items-center mb-6">
+          <div className="flex items-center mb-6" style={{ display: "none" }}>
             <div className="w-1/3">
               <DataItemLabel htmlFor="r2">
                 R<sup>2</sup>{" "}
@@ -142,6 +143,7 @@ export default function Query() {
                 id="r2"
                 name="r2"
                 rows="1"
+                disabled
                 placeholder="Enter a value between 0.80  and 0.99, default to 0.8"
                 onChange={(e) => setR2(e.target.value)}
               ></textarea>
