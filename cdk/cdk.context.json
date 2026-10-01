@@ -55,8 +55,8 @@
       }
     ]
   },
-  "hosted-zone:account=178707647236:domainName=regulomedbtemp.org:region=us-east-2": {
-    "Id": "/hostedzone/Z05794422JO5R9ESAHATS",
-    "Name": "regulomedbtemp.org."
+  "hosted-zone:account=178707647236:domainName=regulomedb.org:region=us-east-2": {
+    "Id": "/hostedzone/Z05301492GQ2HK7VNGW76",
+    "Name": "regulomedb.org."
   }
 }
